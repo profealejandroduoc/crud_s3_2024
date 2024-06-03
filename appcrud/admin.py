@@ -10,8 +10,9 @@ class AdmPersona(admin.ModelAdmin):
 
 
 class AdmMascota(admin.ModelAdmin):
-    list_display=['nombre','tipo','propietario']
-    list_filter=['propietario']
+    list_display=['id','nombre','tipo','pais','propietario']
+    list_editable=['nombre','tipo','pais','propietario']
+    list_filter=['propietario','tipo','pais']
 
 
 admin.site.register(Persona,AdmPersona)
