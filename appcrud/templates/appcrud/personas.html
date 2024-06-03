@@ -1,0 +1,22 @@
+{% extends "appcrud/base.html" %}
+{% load static %}
+
+
+
+{% block contenido %}
+<div class="container">
+    <div class="mt-4">
+        <h3>Lista de Personas</h3>
+    </div>
+    <p>{{fecha}}</p>
+    <p>{{saludo}}</p>
+    {% for p in personas %}
+        <p>{{p.rut}} {{p.nombre}} {{p.apellido}}.</p>
+
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock contenido %}

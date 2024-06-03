@@ -9,7 +9,7 @@ class Persona(models.Model):
     fecha_ncto=models.DateField(verbose_name='Fecha de Nacimiento',error_messages='ta malo')
     correo=models.EmailField(error_messages='coloca bien el correo...')
     telefono=models.IntegerField()
-    imagen=models.ImageField()
+    imagen=models.ImageField(upload_to='personas',null=True)
 
     def __str__(self):
         return f"RUT:{self.rut} NOMBRE: {self.nombre} {self.apellido}"

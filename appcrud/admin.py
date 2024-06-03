@@ -4,7 +4,7 @@ from .models import Persona, Mascota
 # Register your models here.
 
 class AdmPersona(admin.ModelAdmin):
-    list_display=['rut','nombre', 'apellido','fecha_ncto', 'correo','telefono']
+    list_display=['rut','imagen','nombre', 'apellido','fecha_ncto', 'correo','telefono']
     #list_editable=['nombre', 'apellido','fecha_ncto', 'correo','telefono']
     list_filter=['apellido']
 
