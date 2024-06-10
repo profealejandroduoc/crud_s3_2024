@@ -7,6 +7,7 @@
 <div class="container">
     <div class="mt-4">
         <h3>Lista de Personas</h3>
+        <a href="{% url "crearpersona" %}" role="button" class="btn text-primary">+ Agregar Persona</a>
     </div>
     <p>{{fecha}}</p>
     <table class="table table-hover">
@@ -34,7 +35,9 @@
                 <td>{{p.fecha_ncto}}</td>
                 <td>{{p.correo}}</td>
                 <td>{{p.telefono}}</td>
-                <td>ACCIONES</td>
+                <td>
+                    <a href="{% url "detallepersona" p.rut %}" role="button" class="btn btn-info text-light shadow rounded">Ver detalle</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

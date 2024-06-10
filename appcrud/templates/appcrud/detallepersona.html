@@ -1,0 +1,38 @@
+{% extends "appcrud/base.html" %}
+{% load static %}
+
+
+
+{% block contenido %}
+<div class="container">
+    <!-- ['rut','imagen','nombre', 'apellido','fecha_ncto', 'correo','telefono']-->
+    <div class='mt-4 mb-5'>
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="card p-5 border rounded shadow">
+                    <h2 class="card-title text-center">{{persona.nombre}} {{persona.apellido}}</h2>
+                        <img class="card-img-top" src="{{persona.imagen.url}}" alt="Card image">
+
+                    <div class="card-body">
+                        
+                        <p class="card-text"><span style="font-weight:bold">RUT: </span><br>{{persona.rut}}</p>
+                        <p class="card-text"><span style="font-weight:bold">FECHA DE NACIMIENTO: </span><br>{{persona.fecha_ncto}}</p>
+                        <p class="card-text"><span style="font-weight:bold">CORREO: </span><br>{{persona.correo}}</p>
+                        <p class="card-text"><span style="font-weight:bold">TELÉFONO: </span><br>{{persona.telefono}}</p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock contenido %}
