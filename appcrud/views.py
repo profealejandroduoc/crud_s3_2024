@@ -8,13 +8,13 @@ def index(request):
 
 def personas(request):
     hoy=date.today()
-    print("Fecha de hoy",hoy)
-    saludo="Hola desde una vista"
+ 
+    
     personas=Persona.objects.all()
 
     datos={
         "fecha":hoy,
-        "saludo":saludo,
+        
         "personas":personas
     }
 

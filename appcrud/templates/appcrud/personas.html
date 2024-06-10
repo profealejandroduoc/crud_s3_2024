@@ -9,11 +9,36 @@
         <h3>Lista de Personas</h3>
     </div>
     <p>{{fecha}}</p>
-    <p>{{saludo}}</p>
-    {% for p in personas %}
-        <p>{{p.rut}} {{p.nombre}} {{p.apellido}}.</p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>IMAGEN</th>
+                <th>RUT</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>F. NACIMIENTO</th>
+                <th>CORREO</th>
+                <th>TELEFONO</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+            <!-- ['rut','imagen','nombre', 'apellido','fecha_ncto', 'correo','telefono']-->
 
-    {% endfor %}
+        <tbody>
+            {% for p in personas %}
+            <tr>
+                <td><img src='{{p.imagen.url}}' alt="foto" height="150"></td>
+                <td>{{p.rut}}</td>
+                <td>{{p.nombre}}</td>
+                <td>{{p.apellido}}</td>
+                <td>{{p.fecha_ncto}}</td>
+                <td>{{p.correo}}</td>
+                <td>{{p.telefono}}</td>
+                <td>ACCIONES</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 
 </div>
