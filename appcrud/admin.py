@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Persona, Mascota
+from .models import Persona, Mascota, Carrito
 
 # Register your models here.
 
@@ -15,5 +15,9 @@ class AdmMascota(admin.ModelAdmin):
     list_filter=['propietario','tipo','pais']
 
 
+class AdmCarrito(admin.ModelAdmin):
+    list_display=['usuario', 'persona', 'cantidad']
+
 admin.site.register(Persona,AdmPersona)
 admin.site.register(Mascota,AdmMascota)
+admin.site.register(Carrito, AdmCarrito)

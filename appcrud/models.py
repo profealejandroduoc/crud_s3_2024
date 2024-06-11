@@ -1,7 +1,11 @@
 from django.db import models
 from .enumeraciones import *
+from django.contrib.auth.models import User 
 
 # Create your models here.
+
+
+
 class Persona(models.Model):
     rut=models.CharField(max_length=10,primary_key=True, null=False)
     nombre=models.CharField(max_length=50,null=False)
@@ -22,3 +26,8 @@ class Mascota(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+class Carrito(models.Model):
+    usuario=models.ForeignKey(User, on_delete=models.PROTECT)
+    persona=models.ForeignKey(Persona, on_delete=models.PROTECT)
+    cantidad=models.IntegerField()
