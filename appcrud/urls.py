@@ -1,6 +1,6 @@
 
 from django.urls import path, include
-from .views import index,personas,detallepersona, crearpersona
+from .views import index,personas,detallepersona, crearpersona,modificarpersona,eliminarpersona
 
 #PARA TRABAJAR CON IMAGENES
 from django.conf import settings
@@ -10,7 +10,9 @@ urlpatterns = [
     path('',index,name='index'),
     path('personas/',personas,name='personas'),
     path('detallepersona/<id>',detallepersona,name='detallepersona'),
-    path('crearpersona/',crearpersona,name='crearpersona')
+    path('crearpersona/',crearpersona,name='crearpersona'),
+    path('modificarpersona/<id>',modificarpersona, name='modificarpersona'),
+    path('eliminarpersona/<id>', eliminarpersona, name='eliminarpersona'),
 ]
 
 if settings.DEBUG:
