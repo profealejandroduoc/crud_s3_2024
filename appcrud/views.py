@@ -5,6 +5,10 @@ from django.shortcuts import get_object_or_404, redirect
 from .forms import PersonaForm, UpdatePersonaForm
 
 # Create your views here.
+def login(request):
+    return render(request, 'appcrud/login.html')
+
+
 def index(request):
     return render(request, 'appcrud/index.html')
 
