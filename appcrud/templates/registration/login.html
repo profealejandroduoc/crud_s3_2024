@@ -16,20 +16,18 @@
 
                     <form action="" method="post">
                         <div class="mb-3">
-                            <label for="usuario" class="form-label">Nombre de Usuario</label>
-                            <input type="text" class="form-control" name="usuario" id="usuario"
-                                aria-describedby="helpId" placeholder="" />
-                            <small id="helpId" class="form-text text-muted">Help text</small>
-                            <div class="mb-3">
-                                <label for="pass" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="pass" id="pass" placeholder="" />
-                            </div>
+                           {% csrf_token %}
+                           {{form | crispy}}
 
                         </div>
 
                         <div class="mt-3">
                             <input type="submit" value="Login" class="btn btn-primary btn-lg">
 
+                        </div>
+
+                        <div class="text-center">
+                            <a href="" class="text-primary nav-link">Crear una cuenta</a>
                         </div>
                     </form>
                 </div>
