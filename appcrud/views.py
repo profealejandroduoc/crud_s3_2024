@@ -4,6 +4,8 @@ from .models import Persona
 from django.shortcuts import get_object_or_404, redirect
 from .forms import PersonaForm, UpdatePersonaForm
 from django.contrib import messages
+from os import path, remove
+from django.conf import settings
 
 # Create your views here.
 #def login(request):
@@ -79,6 +81,8 @@ def eliminarpersona(request, id):
     }
 
     if request.method=="POST":
+        if persona.imagen:
+            remove(path.join(str(settings.MEDIA_ROOT).replace('/media','')+persona.imagen.url))
         persona.delete()
         messages.error(request, 'Persona Eliminada')
         return redirect(to='personas')

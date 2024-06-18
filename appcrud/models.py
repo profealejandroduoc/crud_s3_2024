@@ -4,7 +4,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-
+class Perfil(models.Model):
+    usuario=models.OneToOneField(User,related_name='usuario', on_delete=models.CASCADE)
+    telefono=models.CharField(max_length=9, null=False)
+    direccion=models.CharField(max_length=250,null=False)
 
 class Persona(models.Model):
     rut=models.CharField(max_length=10,primary_key=True, null=False)

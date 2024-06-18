@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Persona, Mascota, Carrito
+from .models import Persona, Mascota, Carrito, Perfil
 
 # Register your models here.
 
@@ -21,3 +21,4 @@ class AdmCarrito(admin.ModelAdmin):
 admin.site.register(Persona,AdmPersona)
 admin.site.register(Mascota,AdmMascota)
 admin.site.register(Carrito, AdmCarrito)
+admin.site.register(Perfil)
