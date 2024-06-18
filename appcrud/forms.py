@@ -16,9 +16,7 @@ class PersonaForm(forms.ModelForm):
 
 class UpdatePersonaForm(forms.ModelForm):
     
-    rut=forms.CharField(max_length=10,
-                        error_messages={"required":"Ingrese rut sin puntos y con guión ej.:12345678-9"}, 
-                        help_text="Debe ingresar rut")
+    
     
     fecha_ncto=forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
 

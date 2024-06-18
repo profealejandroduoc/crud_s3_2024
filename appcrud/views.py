@@ -3,6 +3,7 @@ from datetime import date
 from .models import Persona
 from django.shortcuts import get_object_or_404, redirect
 from .forms import PersonaForm, UpdatePersonaForm
+from django.contrib import messages
 
 # Create your views here.
 #def login(request):
@@ -44,6 +45,7 @@ def crearpersona(request):
         form=PersonaForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Persona agregada al registro')
             return redirect(to="personas")
 
     datos={
@@ -64,6 +66,7 @@ def modificarpersona(request, id):
         form=UpdatePersonaForm(data=request.POST, files=request.FILES, instance=persona)
         if form.is_valid():
             form.save()
+            messages.warning(request,'Persona Modificada')
             return redirect(to='personas')
         
     return render(request,'appcrud/modificarpersona.html',datos)
@@ -77,6 +80,7 @@ def eliminarpersona(request, id):
 
     if request.method=="POST":
         persona.delete()
+        messages.error(request, 'Persona Eliminada')
         return redirect(to='personas')
  
         
